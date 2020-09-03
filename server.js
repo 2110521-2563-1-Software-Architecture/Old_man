@@ -51,7 +51,25 @@ app.get('/list', (req,res) => {
 });
 
 //get book
-
+/**
+ * @swagger
+ * /getbook:
+ *  get:
+ *    description : Use to get a book by ID 
+ *    parameters: [
+ *          name: id,
+ *          in: path,
+ *          description: ID of the book to use,
+ *          required: true,
+ *          type: integer   
+ *    ]
+ *    responses:
+ *      '200':
+ *         description: Succesful response
+ *      '404':
+ *         description: Unsuccesful response 
+ *  
+ */
 app.get('/getbook', (req,res) => {
     const book = books.find(m => m.id === parseInt(req.body.id))
     if (!book) {
@@ -62,6 +80,18 @@ app.get('/getbook', (req,res) => {
 });
 
 //insert book
+/**
+ * @swagger
+ * /insert:
+ *  post:
+ *    description : Use to insert a new book 
+ *    responses:
+ *      '200':
+ *         description: Succesful response
+ *      '404':
+ *         description: Unsuccesful response 
+ *  
+ */
 app.post('/insert', (req,res) => {
     const book = {
         id: books.length + 1,
@@ -73,10 +103,22 @@ app.post('/insert', (req,res) => {
 });
 
 //delete book
+/**
+ * @swagger
+ * /delete:
+ *  post:
+ *    description : Use to delete a book by id 
+ *    responses:
+ *      '200':
+ *         description: Succesful response
+ *      '404':
+ *         description: Unsuccesful response 
+ *  
+ */
 app.post('/delete', (req,res) => {
     const book = books.find(m => m.id === parseInt(req.body.id));
     if(!book) {
-        res.status(404).send('The movie with the given ID was not found ')
+        res.status(404).send('The book with the given ID was not found ')
     }else {
         const index = books.indexOf(book);
         books.splice(index, 1);
