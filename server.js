@@ -37,11 +37,21 @@ app.get('/', (req, res) => {
 });
 
 //list book
+/**
+ * @swagger
+ * /list:
+ *  get:
+ *    description : Use to get all books 
+ *    responses:
+ *      '200':
+ *         description: Succesful response 
+ */
 app.get('/list', (req,res) => {
-    res.send(books)
+    res.status(200).send(books)
 });
 
 //get book
+
 app.get('/getbook', (req,res) => {
     const book = books.find(m => m.id === parseInt(req.body.id))
     if (!book) {
