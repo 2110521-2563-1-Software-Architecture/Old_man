@@ -1,6 +1,25 @@
 const express = require('express');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 
+const swaggerOption = {
+    swaggerDefinition: {
+        info: {
+            title: 'Books API',
+            description: 'Books API Information',
+            contract:{
+                name: 'Nonthakorn Taboonpong'
+            },
+            servers: ['http://localhost:3000']
+        }
+    },
+    apis: ["server.js"]
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOption);
 const app = express();
+
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocs));
 app.use(express.json());
 
 var books = [{
