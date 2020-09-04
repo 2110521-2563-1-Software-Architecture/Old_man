@@ -148,6 +148,8 @@ app.post('/insert', (req,res) => {
  *    responses:
  *      '200':
  *         description: Succesful response
+ *      '400':
+ *          description: Bad request
  *      '404':
  *         description: Unsuccesful response 
  *  
