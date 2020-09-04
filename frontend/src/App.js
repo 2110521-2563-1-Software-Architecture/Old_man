@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SearchBar from './SearchBar.js'
-import BookTable from './BookTable.js'
-import AddBook from './AddBook.js'
+import SearchBar from './components/SearchBar.js'
+import BookTable from './components/BookTable.js'
+import AddBook from './components/AddBook.js'
 
 function App() {
   return (

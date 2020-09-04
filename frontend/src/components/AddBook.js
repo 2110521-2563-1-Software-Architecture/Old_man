@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link, BrowserRouter, Route } from "react-router-dom";
+import AddBookPage from '../AddBookPage'
 import Button from 'react-bootstrap/Button'
 
 class AddBook extends Component {
@@ -13,7 +15,12 @@ class AddBook extends Component {
                     <text>Add a book</text>
                 </div>
                 <div>
-                    <Button>Add</Button>
+                    <BrowserRouter>
+                    <Link to="/AddBookPage">
+                        <Button type="button">Add</Button>
+                    </Link>
+                    <Route path="/AddBookPage" component={AddBookPage}/>
+                    </BrowserRouter>
                 </div>
             </div>
         )

@@ -42,7 +42,7 @@ class BookTable extends Component {
    }
 
    render() {
-      if(!this.show) return null
+      //if(!this.show) return null
       return (
          <div>
             <p>Search Results</p>
