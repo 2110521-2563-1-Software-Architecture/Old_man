@@ -73,15 +73,18 @@ app.get('/list', (req,res) => {
  *  get:
  *    description : Use to get a book by ID 
  *    parameters: [
+ *          {
  *          name: id,
  *          in: path,
  *          description: ID of the book to use,
- *          required: true,
- *          type: integer   
+ *          required: true 
+ *          }
  *    ]
  *    responses:
  *      '200':
  *         description: Succesful response
+ *      '400':
+ *          description: Bad request
  *      '404':
  *         description: Unsuccesful response 
  *  
@@ -101,9 +104,19 @@ app.get('/getbook', (req,res) => {
  * /insert:
  *  post:
  *    description : Use to insert a new book 
+ *    parameters: [
+ *      {
+ *          name: body,
+ *          in: body,
+ *          description: Book you want to add,
+ *          require: true
+ *      }
+ *    ]
  *    responses:
  *      '200':
  *         description: Succesful response
+ *      '400':
+ *          description: Bad request
  *      '404':
  *         description: Unsuccesful response 
  *  
@@ -112,7 +125,7 @@ app.post('/insert', (req,res) => {
     const book = {
         id: books.length + 1,
         title: req.body.name,
-        author: req.body.type,
+        author: req.body.author,
     }
     books.push(book);
     res.send(book);
@@ -124,6 +137,14 @@ app.post('/insert', (req,res) => {
  * /delete:
  *  post:
  *    description : Use to delete a book by id 
+ *    parameters: [
+ *      {
+ *          name: id,
+ *          in: path,
+ *          description: Id of book you want to delete,
+ *          require: true
+ *      }
+ *    ]
  *    responses:
  *      '200':
  *         description: Succesful response
