@@ -29,7 +29,7 @@ const swaggerOption = {
             }
         }
     },
-    apis: ["server.js"]
+    apis: ["Backend/server.js"]
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOption);
