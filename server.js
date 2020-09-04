@@ -11,6 +11,22 @@ const swaggerOption = {
                 name: 'Nonthakorn Taboonpong'
             },
             servers: ['http://localhost:3000']
+        },
+        definitions:{
+            "book":{
+                type: 'object',
+                properties:{
+                    "id" :{
+                        type: 'integer'                       
+                    },
+                    "title" :{
+                        type: 'string'
+                    },
+                    "author" :{
+                        type: 'string'
+                    }
+                }
+            }
         }
     },
     apis: ["server.js"]
