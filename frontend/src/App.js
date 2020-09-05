@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import SearchBar from './components/SearchBar.js'
 import BookTable from './components/BookTable.js'
@@ -14,8 +14,8 @@ function App() {
 
       <main className="App-main">
         <div className='row'>
-          <div className='container-md'><SearchBar/></div>
-          <div className='container-md'><AddBook/></div>
+          <div className='container-md' style={{width: '30%'}}><SearchBar/></div>
+          <div className='container-md' style={{width: '30%'}}><AddBook/></div>
         </div>
         <div>
           <BookTable/>

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 import './SearchBar.css'
 import BookTable from './BookTable.js'
+import FormControl from 'react-bootstrap/esm/FormControl'
 
 class SearchBar extends Component {
     constructor(props) {
@@ -18,9 +20,11 @@ class SearchBar extends Component {
                 <div>
                     <text>Search books</text>
                 </div>
-                <div>
-                    <input placeholder='Search'></input>
-                    <Button onClick={handleClick}>Go</Button>
+                <div className='row' >
+                    <Form>
+                        <FormControl placeholder="Search" />
+                    </Form>
+                    <Button variant='primary' onClick={handleClick}>Go</Button>
                 </div>
             </div>
         )
