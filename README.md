@@ -106,4 +106,4 @@ Insert Book|go run client.go insert id title author|
 Delete Book|go run client.go delete id|
 
 **7- A component diagram representing the book services with and without interfaces**
-<img src='/Resources/ComponentDiagram.PNG'>
+<img src='/Resources/ComponentDiagram.jpeg'>
