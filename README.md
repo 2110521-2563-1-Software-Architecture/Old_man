@@ -84,6 +84,7 @@ List Books|client.list({}, function(error, books) {printResponse(error, books);}
 Get Book|  client.get({ id: parseInt(id) }, function(error, book) {printResponse(error, book);});|
 Insert Book| client.insert(book, function(error, empty) {printResponse(error, empty);})|
 Delete Book| client.delete({ id: parseInt(id) }, function(error, empty) {printResponse(error, empty);});|
+Watch Book| cliet.watch({})|
 
 **4- The main differences between REST API and gRPC**
 
@@ -104,6 +105,7 @@ List Books|go run client.go list|
 Get Book|go run client.go get id|
 Insert Book|go run client.go insert id title author|
 Delete Book|go run client.go delete id|
+Watch Book|go run client.go watch|
 
 **7- A component diagram representing the book services with and without interfaces**
 <img src='/Resources/ComponentDiagram.jpeg'>
