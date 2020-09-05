@@ -39,12 +39,13 @@ const deleteBook = async (id) => {
 }
 
 const watchBooks = async () => {
-    const socket = io("http://localhost:3000/");
-    socket.on("notify", (message) => { console.log(message); });
+    /*let socket = io.connect(URL);
+    socket.on("notify", (book) => { console.log(book); });*/
+    console.log("Unavailable in REST API");
 }
 
 if (command == "list") listBooks();
-else if (command == "insert") insertBook(process.argv[0], process.argv[1], process.argv[2]);
+else if (command == "insert") insertBook(process.argv[0], process.argv[1]);
 else if (command == "get") getBook(process.argv[0]);
 else if (command == "delete") deleteBook(process.argv[0]);
 else if (command == "watch") watchBooks();
