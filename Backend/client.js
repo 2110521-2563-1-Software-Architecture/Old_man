@@ -30,7 +30,12 @@ const deleteBook = async (id) => {
     console.log(res.data)
 }
 
-if (command == "list") listAllBooks();
+const watchBooks = async () => {
+    //What
+}
+
+if (command == "list") listBooks();
 else if (command == "insert") insertBook(process.argv[0], process.argv[1], process.argv[2]);
 else if (command == "get") getBook(process.argv[0]);
 else if (command == "delete") deleteBook(process.argv[0]);
+else if (command == "watch") watchBooks();
