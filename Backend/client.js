@@ -1,4 +1,5 @@
 const axios = require('axios');
+const io = require("socket.io-client");
 const URL = 'http://localhost:3000';
 
 var processName = process.argv.shift();
@@ -6,32 +7,36 @@ var scriptName = process.argv.shift();
 var command = process.argv.shift();
 
 const listBooks = async () => {
-    const res = await axios.get(`${URL}/books`);
+    const res = await axios.get(`${URL}/list`);
     const books = res.data;
     console.log(books);
     return books;
 };
 
-const insertBook = async (id, title, author) => {
-    var book = { id: parseInt(id), title: title, author: author };
+const insertBook = async (id, name, author) => {
+    var book = { id: parseInt(id), name: name, author: author };
     let res = await axios.post(`${URL}/insert`,book);
-    console.log(res.data)
+    console.log(res.data);
 }
 
 const getBook = async (id) => {
-    const res = await axios.get(`${URL}/book/${id}`);
+    const res = await axios.get(`${URL}${id}`);
     const book = res.data;
     console.log(book);
     return book;
 };
 
 const deleteBook = async (id) => {
-    let res = await axios.delete(`${URL}/delete/${id}`);
+    let res = await axios.delete(`${URL}${id}`);
     console.log(res.data)
 }
 
 const watchBooks = async () => {
-    //What
+    const socket = io("http://localhost:3001/");
+    socket.emit("watch");
+    socket.on("respond", (message) => {
+    console.log(message);
+  });
 }
 
 if (command == "list") listBooks();
