@@ -34,9 +34,7 @@ const deleteBook = async (id) => {
 const watchBooks = async () => {
     const socket = io("http://localhost:3001/");
     socket.emit("watch");
-    socket.on("respond", (message) => {
-    console.log(message);
-  });
+    socket.on("respond", (message) => { console.log(message); });
 }
 
 if (command == "list") listBooks();

@@ -87,10 +87,10 @@ io.on("connection .......", (socket) => {
 
 Function | gRpc | REST API
 ---------|------|-----------
-List Books|client.list({}, function(error, books) {printResponse(error, books);})|
-Get Book|  client.get({ id: parseInt(id) }, function(error, book) {printResponse(error, book);});|
-Insert Book| client.insert(book, function(error, empty) {printResponse(error, empty);})|
-Delete Book| client.delete({ id: parseInt(id) }, function(error, empty) {printResponse(error, empty);});|
+List Books|client.list({}, function(error, books) {printResponse(error, books);})|axios.get(`${URL}/list`);
+Get Book|  client.get({ id: parseInt(id) }, function(error, book) {printResponse(error, book);});|axios.get(`${URL}/getbook/${id}`);
+Insert Book| client.insert(book, function(error, empty) {printResponse(error, empty);})|axios.post(`${URL}/insert`,book);
+Delete Book| client.delete({ id: parseInt(id) }, function(error, empty) {printResponse(error, empty);});|socket.on("respond", (message) => { console.log(message); });
 Watch Book| cliet.watch({})|
 
 **4- The main differences between REST API and gRPC**
