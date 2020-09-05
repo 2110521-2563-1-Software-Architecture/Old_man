@@ -1,4 +1,4 @@
-# Software Architectur Assigment 1
+# Software Architecture Assigment 1
 #### Group: Old Man with Backache
 --------
 **1- Screenshots of Swagger for your APIs in 2.**
@@ -92,6 +92,9 @@ REST API uses HTTP 1.1 but gRPC uses HTTP/2 which is more faster.
 
 
 **5- the benefits of introduce interface in front of the gRPC and REST API of the book services**
+- Easier to maintain
+- In API with interface, Detail in code be hidden form user that make user easy to use API function.
+- API with interface is more clear than API without interface.
 
 
 **6- Based on the introduced interface, compare how to call the methods based on gRPC and REST API side-by-side**
