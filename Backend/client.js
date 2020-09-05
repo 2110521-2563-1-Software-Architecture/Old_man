@@ -12,8 +12,8 @@ const listBooks = async () => {
     console.log(books);
 };
 
-const insertBook = async (id, name, author) => {
-    var book = { id: parseInt(id), name: name, author: author };
+const insertBook = async (name, author) => {
+    var book = { name: name, author: author };
     let res = await axios.post(`${URL}/insert`,book);
     console.log(res.data);
 }
@@ -39,9 +39,8 @@ const deleteBook = async (id) => {
 }
 
 const watchBooks = async () => {
-    const socket = io("http://localhost:3001/");
-    socket.emit("watch");
-    socket.on("respond", (message) => { console.log(message); });
+    const socket = io("http://localhost:3000/");
+    socket.on("notify", (message) => { console.log(message); });
 }
 
 if (command == "list") listBooks();

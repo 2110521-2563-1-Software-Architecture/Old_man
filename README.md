@@ -110,7 +110,7 @@ Function | gRpc | REST API
 ---------|------|-----------
 List Books|go run client.go list|node client.js list
 Get Book|go run client.go get id|node client.js get id
-Insert Book|go run client.go insert id title author|node client.js insert id title author
+Insert Book|go run client.go insert id title author|node client.js insert title author
 Delete Book|go run client.go delete id|node client.js delete id
 Watch Book|go run client.go watch|node client.js watch
 
