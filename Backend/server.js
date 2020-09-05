@@ -2,6 +2,7 @@ const express = require('express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
+
 const swaggerOption = {
     swaggerDefinition: {
         info: {
@@ -89,8 +90,8 @@ app.get('/list', (req,res) => {
  *         description: Unsuccesful response 
  *  
  */
-app.get('/getbook', (req,res) => {
-    const book = books.find(m => m.id === parseInt(req.body.id))
+app.get('/getbook/:id', (req,res) => {
+    const book = books.find(m => m.id === parseInt(req.params.id))
     if (!book) {
         res.status(404).send('Dont find ID')
     } else {
@@ -154,8 +155,8 @@ app.post('/insert', (req,res) => {
  *         description: Unsuccesful response 
  *  
  */
-app.post('/delete', (req,res) => {
-    const book = books.find(m => m.id === parseInt(req.body.id));
+app.get('/delete/:id', (req,res) => {
+    const book = books.find(m => m.id === parseInt(req.params.id));
     if(!book) {
         res.status(404).send('The book with the given ID was not found ')
     }else {
@@ -167,4 +168,14 @@ app.post('/delete', (req,res) => {
 //
 
 const port = process.env.PORT || 3000
-app.listen(port, () => console.log(`Listening on port${port}...`) );
+s = app.listen(port, () => console.log(`Listening on port${port}...`) );
+var io = require("socket.io")(s);
+
+io.on("connection .......", (socket) => {
+    console.log("already connect to server");
+
+    socket.on('insert',(book) => {
+        io.sockets.emit('notify',book)
+    })
+  });
+  
