@@ -149,7 +149,7 @@ List Books|client.list({}, function(error, books) {printResponse(error, books);}
 Get Book|  client.get({ id: parseInt(id) }, function(error, book) {printResponse(error, book);});|axios.get(`${URL}/getbook/${id}`);
 Insert Book| client.insert(book, function(error, empty) {printResponse(error, empty);})|axios.post(`${URL}/insert`,book);
 Delete Book| client.delete({ id: parseInt(id) }, function(error, empty) {printResponse(error, empty);});|axios.get(`${URL}/delete/${id}`);
-Watch Book| cliet.watch({})|socket.on("respond", (message));
+Watch Book| cliet.watch({})|socket.on("notify", (book) => { console.log(book); });
 
 **4- The main differences between REST API and gRPC**
 
