@@ -15,7 +15,6 @@ const insertBook = async (id, title, author) => {
     var book = { id: parseInt(id), title: title, author: author };
     let res = await axios.post(`${BASE_URL}/insert`,book);
     console.log(res.data)
-    socket.emit('insert',book)
 }
 
 const getBook = async (id) => {
