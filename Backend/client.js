@@ -10,7 +10,6 @@ const listBooks = async () => {
     const res = await axios.get(`${URL}/list`);
     const books = res.data;
     console.log(books);
-    return books;
 };
 
 const insertBook = async (id, name, author) => {
@@ -20,15 +19,23 @@ const insertBook = async (id, name, author) => {
 }
 
 const getBook = async (id) => {
-    const res = await axios.get(`${URL}/getbook/${id}`);
-    const book = res.data;
-    console.log(book);
-    return book;
+    await axios.get(`${URL}/getbook/${id}`)
+    .then((response) => {
+        console.log(response.data);
+    })
+    .catch((error) => {
+        console.log(error.response.data); //Logs a string: Error: Request failed with status code 404
+    })
 };
 
 const deleteBook = async (id) => {
-    let res = await axios.delete(`${URL}/delete/${id}`);
-    console.log(res.data)
+    await axios.get(`${URL}/delete/${id}`)
+    .then((response) => {
+        console.log(response.data);
+    })
+    .catch((error) => {
+        console.log(error.response.data); //Logs a string: Error: Request failed with status code 404
+    })
 }
 
 const watchBooks = async () => {
