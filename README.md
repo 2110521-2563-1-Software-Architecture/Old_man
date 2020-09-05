@@ -1,5 +1,11 @@
 # Software Architecture Assigment 1
 #### Group: Old Man with Backache
+Member name:
+คณิสร			เข็มทอง				    6030064821
+วชิรฉัตร		 สวัสดิวัตน์ ณ อยุธยา		 6030506921
+ธียศ			ศิริเสรีวรรณ			  6031027821
+นนทกร		   เกตุนิรัตน์				  6031028421
+นนทกร		   ตะบูนพงศ์				6031029021	
 --------
 **1- Screenshots of Swagger for your APIs in 2.**
 
