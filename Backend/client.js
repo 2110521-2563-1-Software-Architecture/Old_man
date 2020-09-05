@@ -20,14 +20,14 @@ const insertBook = async (id, name, author) => {
 }
 
 const getBook = async (id) => {
-    const res = await axios.get(`${URL}${id}`);
+    const res = await axios.get(`${URL}/getbook/${id}`);
     const book = res.data;
     console.log(book);
     return book;
 };
 
 const deleteBook = async (id) => {
-    let res = await axios.delete(`${URL}${id}`);
+    let res = await axios.delete(`${URL}/delete/${id}`);
     console.log(res.data)
 }
 
