@@ -108,11 +108,11 @@ REST API uses HTTP 1.1 but gRPC uses HTTP/2 which is more faster.
 **6- Based on the introduced interface, compare how to call the methods based on gRPC and REST API side-by-side**
 Function | gRpc | REST API
 ---------|------|-----------
-List Books|go run client.go list|
-Get Book|go run client.go get id|
-Insert Book|go run client.go insert id title author|
-Delete Book|go run client.go delete id|
-Watch Book|go run client.go watch|
+List Books|go run client.go list|node client.js list
+Get Book|go run client.go get id|node client.js get id
+Insert Book|go run client.go insert id title author|node client.js insert id title author
+Delete Book|go run client.go delete id|node client.js delete id
+Watch Book|go run client.go watch|node client.js watch
 
 **7- A component diagram representing the book services with and without interfaces**
 <img src='/Resources/ComponentDiagram.jpeg'>
